@@ -1,0 +1,88 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="24.7.12">
+  <diagram name="Página-1" id="ziSVozyt9WaWVKeKySAl">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="qCBFfpWgapB7aubwQo2X-34" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="190" width="340" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="qCBFfpWgapB7aubwQo2X-31" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="222" y="1013" width="140" height="837" as="geometry" />
+        </mxCell>
+        <mxCell id="qCBFfpWgapB7aubwQo2X-1" value="Professor&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="44" y="421" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="wTTM59hBWh2BgrftvA87-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="qCBFfpWgapB7aubwQo2X-5" target="qCBFfpWgapB7aubwQo2X-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qCBFfpWgapB7aubwQo2X-5" value="Responsável" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1412" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qCBFfpWgapB7aubwQo2X-8" value="Fazer Chamada" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="242" y="202" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qCBFfpWgapB7aubwQo2X-9" value="Lançar tarefas" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="242" y="292" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qCBFfpWgapB7aubwQo2X-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="qCBFfpWgapB7aubwQo2X-11" target="qCBFfpWgapB7aubwQo2X-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qCBFfpWgapB7aubwQo2X-11" value="Lançar diário" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="242" y="382" width="118" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qCBFfpWgapB7aubwQo2X-15" value="Consultar&amp;nbsp;Chamada" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="232" y="1303" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qCBFfpWgapB7aubwQo2X-16" value="Consultar tarefas" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="232" y="1033" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qCBFfpWgapB7aubwQo2X-17" value="Consultar&amp;nbsp;anotações" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="232" y="1123" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qCBFfpWgapB7aubwQo2X-18" value="Lançar Ocorrências" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="241" y="470" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qCBFfpWgapB7aubwQo2X-20" value="Autorizar envio de ocorrências e anotações" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="233" y="850" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qCBFfpWgapB7aubwQo2X-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="qCBFfpWgapB7aubwQo2X-27" target="qCBFfpWgapB7aubwQo2X-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qCBFfpWgapB7aubwQo2X-27" value="&lt;div&gt;Secretaria&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="44" y="860" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qCBFfpWgapB7aubwQo2X-29" value="Consultar Ocorrências" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="232" y="1213" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qCBFfpWgapB7aubwQo2X-30" value="Gerar a segunda via do boleto" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="232" y="1393" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qCBFfpWgapB7aubwQo2X-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.449;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="qCBFfpWgapB7aubwQo2X-1" target="qCBFfpWgapB7aubwQo2X-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qCBFfpWgapB7aubwQo2X-36" value="Consultar&amp;nbsp;Cardápio" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="233" y="1480" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qCBFfpWgapB7aubwQo2X-38" value="Consultar&amp;nbsp;&lt;div&gt;Comunicados&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="233" y="1567" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qCBFfpWgapB7aubwQo2X-39" value="Consultar&amp;nbsp;&lt;div&gt;Comunicados&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="241" y="560" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qCBFfpWgapB7aubwQo2X-40" value="Consultar&amp;nbsp;&lt;div&gt;Mural&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="241" y="650" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qCBFfpWgapB7aubwQo2X-41" value="Consultar&amp;nbsp;&lt;div&gt;Mural&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="1660" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qCBFfpWgapB7aubwQo2X-42" value="Lançar anotações" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="414" y="382" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qCBFfpWgapB7aubwQo2X-45" value="Consultar&amp;nbsp;&lt;div&gt;Agenda&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="232" y="1750" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

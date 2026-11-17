@@ -1,0 +1,75 @@
+title Caso de Uso Lançar Anotação
+
+participantgroup #lightgreen #grey:3 
+actor Professor
+participant AppEscola
+participant "Sistema ERP escola" as ERP
+end
+
+
+activate AppEscola
+
+Professor->AppEscola:1:verTurmas(Professor)
+AppEscola->ERP:1.1:API call getListaDeTurmas(idProfessor)
+activate ERP
+AppEscola<--ERP:lista de turmas do professor: {lista[Turma]}
+deactivate ERP
+
+note left of AppEscola:Caso haja somente\numa turma:\npular  para  2
+Professor<--AppEscola:mostrar lista de turmas
+Professor->AppEscola:2:selecionarTurma(Turma)
+
+
+
+AppEscola->ERP:2.1: API call getTurmaInfo(idTurma)
+activate ERP
+AppEscola<--ERP:info de turma: {lista[Aluno]}
+AppEscola->ERP:2.2:API call getListaDePerguntas(idTurma) /async/
+AppEscola<--ERP:Lista de Perguntas da Turma - {lista[Pergunta]}  /async/ 
+deactivate ERP
+Professor<--AppEscola:mostrar lista de alunos
+
+
+
+space 
+
+Professor->AppEscola:3:selecionarAluno(Aluno)
+AppEscola->ERP:3.1: API call getAlunoInfo(idAluno)
+activate ERP
+AppEscola<--ERP:info de aluno:\naluno{alunoNome: "Joao", dataDeNascimento: "15/03/2015", responsavel: "Maria"}
+deactivate ERP
+
+Professor<--AppEscola:mostrar info do aluno
+
+Professor->AppEscola:4:verAnotacoes(Aluno)
+AppEscola->ERP:4.1:API call getAnotacoes(idAluno)
+activate ERP
+AppEscola<--ERP:Lista de Anotações - {Lista[Anotacao]}
+deactivate ERP
+AppEscola-->Professor:mostrar Anotacoes do Aluno
+
+note left of AppEscola:para criar uma nova anotação - rotina 5\npara visualizar/editar anotação - rotina 6 e 7
+Professor->AppEscola:5:criarAnotacao(info da Anotacao)
+
+AppEscola->ERP:5.1: API call postAnotacao(data, disciplina, tipo, descricao)
+activate ERP
+AppEscola<--ERP:sucesso da operação
+deactivate ERP
+
+Professor->AppEscola:6:selecionarAnotacao(idAnotacao)
+
+AppEscola->ERP:6.1: API call getAnotacao(idAnotacao)
+activate ERP
+AppEscola<--ERP:info da Anotação
+deactivate ERP
+
+AppEscola-->Professor:mostrar info de anotação
+
+Professor->AppEscola:7:editarAnotacao(novasInformacoes)
+AppEscola->ERP:7.1: API call patchAnotacao(idProfessor, idAnotacao, data, disciplina, tipo, descricao))
+activate ERP
+note right of AppEscola: Somente o Autor da entrada e outros cargos administrativos podem editar a Anotacao (?)
+AppEscola<--ERP:sucesso da operação
+deactivate ERP
+
+

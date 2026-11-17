@@ -1,0 +1,73 @@
+title Caso de Uso Responder Lista de Perguntas
+
+participantgroup #lightblue #blue:3
+actor Professor
+participant AppEscola
+participant "Sistema ERP escola" as ERP
+end
+
+
+activate AppEscola
+
+Professor->AppEscola:1:verTurmas(Professor)
+AppEscola->ERP:1.1:API call getListaDeTurmas(idProfessor)
+activate ERP
+AppEscola<--ERP:lista de turmas do professor: {lista[Turma]}
+deactivate ERP
+
+note left of AppEscola:Caso haja somente\numa turma:\npular  para  2
+Professor<--AppEscola:mostrar lista de turmas
+Professor->AppEscola:2:selecionarTurma(Turma)
+
+
+
+AppEscola->ERP:2.1: API call getTurmaInfo(idTurma)
+activate ERP
+AppEscola<--ERP:info de turma: {lista[Aluno]}
+AppEscola->ERP:2.2:API call getListaDePerguntas(idTurma) /async/
+AppEscola<--ERP:Lista de Perguntas da Turma - {lista[Pergunta]}  /async/ 
+deactivate ERP
+Professor<--AppEscola:mostrar lista de alunos
+
+
+
+space 
+
+Professor->AppEscola:3:selecionarAluno(Aluno)
+AppEscola->ERP:3.1: API call getAlunoInfo(idAluno)
+activate ERP
+AppEscola<--ERP:info de aluno:\naluno{alunoNome: "Joao", dataDeNascimento: "15/03/2015", responsavel: "Maria"}
+deactivate ERP
+ 
+Professor<--AppEscola:mostrar info do aluno
+Professor->AppEscola:4:verDiario(Aluno)
+
+AppEscola->ERP:4.1:API call getDiario(idAluno)
+activate ERP
+AppEscola<--ERP:Lista de entradas de diario - {lista[idEntradaDeDiario]}
+deactivate ERP
+
+Professor<--AppEscola:mostrar lista de entradas de diario dos alunos
+
+Professor->AppEscola:5:selecionarEntradaDiario(EntradaDeDiario)
+AppEscola->ERP:5.1:API call getEntradaDiario(idEntradaDeDiario)
+activate ERP
+AppEscola<--ERP:Info de entrada de diario: respostas - {Lista[Resposta])} (nullable)
+deactivate ERP
+note left of AppEscola:para criar uma nova lista de Respostas(caso null) - rotina 6\npara visualizar/editar lista de Resposta - rotina 7
+AppEscola-->Professor:mostrar lista de perguntas (retorno 2.2)
+Professor<--AppEscola:mostrar lista de Respostas
+Professor->AppEscola:6:responderListaDeResposta(Lista[Resposta])
+activate ERP
+AppEscola->ERP:6.1: API call postListaDeResposta(Lista[Resposta])
+note left of ERP: Ao se deparar com uma entrada de diário com\n chamada com falta, pede a confirmação do lançamento da entrada
+Professor<-AppEscola:confirmar registro da entrada mesmo com falta?
+AppEscola<--ERP:sucesso da operação
+deactivate ERP
+
+Professor->AppEscola:7:editarRespostas(EntradaDeDiario, Lista[Resposta])
+AppEscola->ERP:7.1: API call patchListaDeResposta(idProfessor, idEntradaDeDiario, Lista[Resposta]))
+activate ERP
+note right of AppEscola: Somente o Autor da entrada e coordenação podem editar a Lista de Perguntas (?)
+AppEscola<--ERP:sucesso da operação
+deactivate ERP

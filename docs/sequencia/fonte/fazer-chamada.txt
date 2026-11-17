@@ -1,0 +1,62 @@
+title Caso de Uso Fazer Chamada
+participantgroup #E0D4EC #grey:3 
+actor Professor
+participant AppEscola
+participant "Sistema ERP escola" as ERP
+end
+
+
+activate AppEscola
+
+Professor->AppEscola:1:verTurmas(Professor)
+AppEscola->ERP:1.1:API call getListaDeTurmas(idProfessor)
+activate ERP
+AppEscola<--ERP:lista de turmas do professor: {lista[Turma]}
+deactivate ERP
+
+note left of AppEscola:Caso haja somente\numa turma:\npular  para  2
+Professor<--AppEscola:mostrar lista de turmas
+Professor->AppEscola:2:selecionarTurma(Turma)
+
+
+
+AppEscola->ERP:2.1: API call getTurmaInfo(idTurma)
+activate ERP
+AppEscola<--ERP:info de turma: {lista[Aluno]}
+AppEscola->ERP:2.2:API call getListaDePerguntas(idTurma) /async/
+AppEscola<--ERP:Lista de Perguntas da Turma - {lista[Pergunta]}  /async/ 
+deactivate ERP
+Professor<--AppEscola:mostrar lista de alunos
+
+
+
+space 
+
+Professor->AppEscola:3:selecionarChamada(data, Professor)
+
+AppEscola->ERP:3.1: API call getChamada(data = hoje, idProfessor)
+AppEscola<--ERP:lista de chamada (nullable)
+activate ERP
+deactivate ERP
+
+Professor<--AppEscola:mostrar lista de chamada
+
+note right of AppEscola:Caso o registro de chamada para a data selecionada ainda não exista\n ele será criado no momento da submissão do form - rotina 4\nSe já existir, será editado - rotina ?//
+Professor->AppEscola:4:lancarChamada(Aluno)
+AppEscola->ERP:4.1:API call postEntradaDeDiario(data, idTurma)
+activate ERP
+
+note left of ERP:Uma entrada de diario deve ser criada para cada aluno\nentrada deve ser vinculada com a chamada, a qual tera o atributo de presença 
+AppEscola<--ERP:Sucesso da Operação
+deactivate ERP
+
+Professor->AppEscola:4:lancarChamada(Aluno)
+AppEscola->ERP:4.1:API call patchEntradaDeDiario(data, idTurma)
+activate ERP
+
+note left of ERP:A chamada referente a Entrada de Diário\n selecionada deve ser atualizada para cada aluno da turma
+AppEscola<--ERP:Sucesso da Operação
+deactivate ERP
+
+
+

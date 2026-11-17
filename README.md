@@ -29,13 +29,13 @@ Os dois usam o mesmo backend, a mesma autenticação e a mesma base visual. Assi
 
 ## Documentação
 
-A documentação de engenharia está no repositório **[appescola-docs](https://github.com/TeixeiraES/appescola-docs)**:
+A documentação de engenharia fica na pasta [`docs/`](docs/):
 
-- [Documento de requisitos](https://github.com/TeixeiraES/appescola-docs/blob/main/requisitos/documento-de-requisitos.md): regras de negócio, histórias de usuário, requisitos não funcionais e modelo de classes
-- [Casos de uso](https://github.com/TeixeiraES/appescola-docs/tree/main/casos-de-uso)
-- [Diagramas de sequência](https://github.com/TeixeiraES/appescola-docs/tree/main/sequencia)
-- [Arquitetura C4](https://github.com/TeixeiraES/appescola-docs/blob/main/arquitetura/c4.md)
-- [Contrato de API](https://github.com/TeixeiraES/appescola-docs/blob/main/api/lista-de-apis.md)
+- [Documento de requisitos](docs/requisitos/documento-de-requisitos.md): regras de negócio, histórias de usuário, requisitos não funcionais e modelo de classes
+- [Casos de uso](docs/casos-de-uso/)
+- [Diagramas de sequência](docs/sequencia/)
+- [Arquitetura C4](docs/arquitetura/c4.md)
+- [Contrato de API](docs/api/lista-de-apis.md)
 
 ## Funcionalidades
 
@@ -59,6 +59,7 @@ A documentação de engenharia está no repositório **[appescola-docs](https://
 
 ```
 appescola/
+├── docs/                   # Requisitos, casos de uso, sequência, C4, API
 ├── apps/
 │   ├── professores/        # App Flutter dos professores
 │   │   └── lib/
