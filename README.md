@@ -27,6 +27,16 @@ O **AppEscola** digitaliza a rotina de uma escola de ensino básico. São dois a
 
 Os dois usam o mesmo backend, a mesma autenticação e a mesma base visual. Assim, o que o professor lança aparece para o responsável.
 
+## Documentação
+
+A documentação de engenharia está no repositório **[appescola-docs](https://github.com/TeixeiraES/appescola-docs)**:
+
+- [Documento de requisitos](https://github.com/TeixeiraES/appescola-docs/blob/main/requisitos/documento-de-requisitos.md): regras de negócio, histórias de usuário, requisitos não funcionais e modelo de classes
+- [Casos de uso](https://github.com/TeixeiraES/appescola-docs/tree/main/casos-de-uso)
+- [Diagramas de sequência](https://github.com/TeixeiraES/appescola-docs/tree/main/sequencia)
+- [Arquitetura C4](https://github.com/TeixeiraES/appescola-docs/blob/main/arquitetura/c4.md)
+- [Contrato de API](https://github.com/TeixeiraES/appescola-docs/blob/main/api/lista-de-apis.md)
+
 ## Funcionalidades
 
 ### App dos professores
